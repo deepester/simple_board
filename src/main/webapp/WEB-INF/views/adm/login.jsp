@@ -15,7 +15,7 @@
 			<input type="submit" class="btn" value="로그인">
 			<div class="fail_msg"></div>
 		</form>
-		<div class="copy">Copyright. DamoaPay.  All rights reserved.</div>
+		<div class="copy">Copyright. Allgill.  All rights reserved.</div>
 	</div>
 </div>
 
@@ -26,7 +26,7 @@ case "1":
 	$(".fail_msg").html("아이디 또는 비밀번호가 일치하지 않습니다.");
 	break;
 case "2":
-	alert("계정이 비활성화 되어 있습니다.\n관리담당자로 문의해주세요.\n(mogeon3243@damoapay.com, 070-4333-4288)");
+	alert("계정이 비활성화 되어 있습니다.\n관리담당자로 문의해주세요.");
 	$(".fail_msg").html("계정이 비활성화 되어 있습니다.");
 	break;
 case "3": 

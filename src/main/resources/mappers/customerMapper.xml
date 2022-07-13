@@ -19,7 +19,7 @@
 		</if>
 	</select>
 
-	<select id="selectNoticeList" resultType="com.damoapay.customer.vo.NoticeVO">
+	<select id="selectNoticeList" resultType="com.simple_board.customer.vo.NoticeVO">
 		SELECT 
 			seq,
 			title, 
@@ -43,7 +43,7 @@
 		limit #{start}, #{cntPerPage}
 	</select>
 
-	<select id="selectNotice" resultType="com.damoapay.customer.vo.NoticeVO">
+	<select id="selectNotice" resultType="com.simple_board.customer.vo.NoticeVO">
 	<![CDATA[ 
 		SELECT 
 			seq,
@@ -94,7 +94,7 @@
 		</if>		
 	</select>
 
-	<select id="selectFaqList" resultType="com.damoapay.customer.vo.FaqVO">
+	<select id="selectFaqList" resultType="com.simple_board.customer.vo.FaqVO">
 		SELECT 
 			title, 
 			content,

@@ -3,8 +3,8 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.common</groupId>
-	<artifactId>damoapay</artifactId>
-	<name>damoapay</name>
+	<artifactId>simple_board</artifactId>
+	<name>simple_board</name>
 	<packaging>war</packaging>
 	<version>1.0.0-BUILD-SNAPSHOT</version>
 	<properties>
@@ -169,7 +169,13 @@
 		    <artifactId>mariadb-java-client</artifactId>
 		    <version>2.7.0</version>
 		</dependency>
-		
+		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+		<dependency>
+		    <groupId>mysql</groupId>
+		    <artifactId>mysql-connector-java</artifactId>
+		    <version>8.0.28</version>
+		</dependency>
+
 		<!-- 첨부파일 -->
          <!-- Commons FileUpload -->
         <dependency>
@@ -201,6 +207,10 @@
 	</dependencies>
     <build>
         <plugins>
+            <plugin>
+          		<artifactId>maven-war-plugin</artifactId>
+          		<version>3.2.2</version>
+        	</plugin>
             <plugin>
                 <artifactId>maven-eclipse-plugin</artifactId>
                 <version>2.9</version>

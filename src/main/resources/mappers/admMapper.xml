@@ -4,7 +4,7 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="admMapper">
 
-	<select id="selectLogin" resultType="com.damoapay.adm.vo.MemberVO">
+	<select id="selectLogin" resultType="com.simple_board.adm.vo.MemberVO">
 	<![CDATA[ 
 		SELECT uid, name, state, fail_upw,
 			(
@@ -36,7 +36,7 @@
 	]]>
 	</update>
 	
-	<select id="selectEmailInfo" resultType="com.damoapay.adm.vo.MemberVO">
+	<select id="selectEmailInfo" resultType="com.simple_board.adm.vo.MemberVO">
 	<![CDATA[ 
 		SELECT uid, email, name, state
 		FROM member_info
@@ -67,7 +67,7 @@
 		</if>
 	</select>
 	
-	<select id="selectMemberList" resultType="com.damoapay.adm.vo.MemberVO">
+	<select id="selectMemberList" resultType="com.simple_board.adm.vo.MemberVO">
 		SELECT 
 			seq,
 			uid, 
@@ -93,7 +93,7 @@
 		limit #{start}, #{cntPerPage}
 	</select>
 
-	<select id="selectMember" resultType="com.damoapay.adm.vo.MemberVO">
+	<select id="selectMember" resultType="com.simple_board.adm.vo.MemberVO">
 	<![CDATA[ 
 		SELECT 
 			uid, 
@@ -161,7 +161,7 @@
 		</if>
 	</select>
 
-	<select id="selectNoticeList" resultType="com.damoapay.adm.vo.NoticeVO">
+	<select id="selectNoticeList" resultType="com.simple_board.adm.vo.NoticeVO">
 		SELECT 
 			ROW_NUMBER() OVER() AS ROWNO,
 			seq,
@@ -186,7 +186,7 @@
 		limit #{start}, #{cntPerPage}
 	</select>
 
-	<select id="selectNotice" resultType="com.damoapay.adm.vo.NoticeVO">
+	<select id="selectNotice" resultType="com.simple_board.adm.vo.NoticeVO">
 	<![CDATA[ 
 		SELECT 
 			seq,
@@ -198,7 +198,7 @@
 	]]>
 	</select>
 
-	<insert id="insertNoticeList"  parameterType="com.damoapay.adm.vo.NoticeVO" useGeneratedKeys="true" keyProperty="seq">
+	<insert id="insertNoticeList"  parameterType="com.simple_board.adm.vo.NoticeVO" useGeneratedKeys="true" keyProperty="seq">
 		<selectKey keyProperty="seq" resultType="int" order="BEFORE">
 			SELECT IFNULL(MAX(seq + 1), 1) AS seq FROM notice_list order by seq DESC limit 1;
 		</selectKey>
@@ -254,7 +254,7 @@
 		FROM file_list
 		WHERE seq = #{seq}
 	</select>
-   <update id="updateNotice" parameterType="com.damoapay.adm.vo.NoticeVO" useGeneratedKeys="true" keyProperty="seq">
+   <update id="updateNotice" parameterType="com.simple_board.adm.vo.NoticeVO" useGeneratedKeys="true" keyProperty="seq">
   		UPDATE notice_list SET 
 			title = #{title},
 			content = #{content},
@@ -283,7 +283,7 @@
 		</if>
 	</select>
 
-	<select id="selectFaqList" resultType="com.damoapay.adm.vo.FaqVO">
+	<select id="selectFaqList" resultType="com.simple_board.adm.vo.FaqVO">
 		SELECT 
 			seq,
 			category, 
@@ -307,7 +307,7 @@
 		limit #{start}, #{cntPerPage}
 	</select>
 
-	<select id="selectFaq" resultType="com.damoapay.adm.vo.FaqVO">
+	<select id="selectFaq" resultType="com.simple_board.adm.vo.FaqVO">
 	<![CDATA[ 
 		SELECT 
 			seq,

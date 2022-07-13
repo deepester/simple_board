@@ -15,7 +15,7 @@
 			<input type="submit" class="btn" value="전송">
 			<div class="fail_msg"></div>
 		</form>
-		<div class="copy">Copyright. DamoaPay.  All rights reserved.</div>
+		<div class="copy">Copyright. Allgill.  All rights reserved.</div>
 	</div>
 </div>
 

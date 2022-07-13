@@ -86,7 +86,7 @@ public class AdmController {
 				if(emailInfo.getState() == 0) {
 					// 잠김 확인
 					System.out.println("getState : " + emailInfo.getState() );
-					content  = "아이디는 [ " + emailInfo.getUid() + " ] 이며 계정이 비활성화 되어 있습니다.<br>관리담당자에게 문의해주세요.<br>(mogeon3243@damoapay.com, 070-4333-4288)";
+					content  = "아이디는 [ " + emailInfo.getUid() + " ] 이며 계정이 비활성화 되어 있습니다.<br>관리담당자에게 문의해주세요.";
 				}else{
 					String password = CommonUtils.setPassword(8);
 					emailInfo.setUpw(CommonUtils.sha256(password));
@@ -104,7 +104,7 @@ public class AdmController {
 			model.addAttribute("rt", "1");
 			return "redirect:/adm/loginFind.do";
 		}
-        String subject = "[다모아페이] 관리자 계정 찾기";
+        String subject = "관리자 계정 찾기";
         String from = "deepest@kakao.com";
         String to = emailInfo.getEmail();
         
@@ -112,7 +112,7 @@ public class AdmController {
             MimeMessage mail = mailSender.createMimeMessage();
             MimeMessageHelper mailHelper = new MimeMessageHelper(mail,"UTF-8");
             mailHelper.setFrom(from);
-            mailHelper.setFrom("다모아페이 <" + from + ">");
+            mailHelper.setFrom("<" + from + ">");
             mailHelper.setTo(to);
             mailHelper.setSubject(subject);
             mailHelper.setText(content, true);
